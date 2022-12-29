@@ -16,5 +16,7 @@
     "no-console": "off",
     "no-plusplus": "off",
     "no-use-before-define": "off"
+    // "prefer-const": "off",
+    // "import/prefer-default-export": "off"
   }
 }
