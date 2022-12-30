@@ -1,22 +1,28 @@
 import findElement from './find-element';
 
-function clickConvert(location) {
+function combineClickConvert() {
+  const { nameDiv } = findElement();
+  const location = nameDiv.textContent;
+
+  const units = Promise.resolve(findUnits());
+
+  units
+    .then((degree) => {
+      console.log(location);
+      const newUnits = convertUnits(location, degree);
+      return newUnits;
+    })
+    .then((newUnits) => {
+      changeUnits(newUnits);
+    });
+}
+
+function clickConvert() {
   const { toggleButton } = findElement();
 
-  toggleButton.addEventListener('click', () => {
-    const units = Promise.resolve(findUnits());
+  toggleButton.addEventListener('click', combineClickConvert);
 
-    units
-      .then((degree) => {
-        console.log(degree);
-        const newUnits = convertUnits(location, degree);
-        return newUnits;
-      })
-      .then((newUnits) => {
-        console.log(newUnits);
-        changeUnits(newUnits);
-      });
-  });
+  return toggleButton;
 }
 
 function convertUnits(location, units) {
@@ -28,7 +34,6 @@ function convertUnits(location, units) {
   )
     .then((response) => response.json())
     .then((response) => {
-      // console.log(response);
       weather.temp = response.main.temp;
       weather.tempMax = response.main.temp_max;
       weather.tempMin = response.main.temp_min;
@@ -55,12 +60,12 @@ function findUnits() {
 function changeUnits(data) {
   const { tempDiv } = findElement();
   const { degreeDiv } = findElement();
-  console.log(data.degree);
+
   if (data.degree === 'metric') {
-    tempDiv.textContent = data.temp;
+    tempDiv.textContent = Math.floor(data.temp);
     degreeDiv.textContent = '\u2103';
   } else if (data.degree === 'imperial') {
-    tempDiv.textContent = data.temp;
+    tempDiv.textContent = Math.floor(data.temp);
     degreeDiv.textContent = '\u2109';
   }
 }

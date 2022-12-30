@@ -7,16 +7,14 @@ function getWeather(location) {
   )
     .then((response) => response.json())
     .then((response) => {
+      console.log(response);
+      weather.name = response.name;
       weather.humidity = response.main.humidity;
       weather.main = response.weather[0].main;
       weather.descript = response.weather[0].description;
       weather.icon = response.weather[0].icon;
     })
-    .then(
-      () =>
-        // console.log(weather);
-        weather
-    );
+    .then(() => weather);
 
   return hit;
 }

@@ -4,7 +4,8 @@ body {
 }
 
 .temp,
-.degree {
+.degree,
+.name {
   color: whitesmoke;
   font-size: 2rem;
 }

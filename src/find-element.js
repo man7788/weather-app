@@ -4,7 +4,8 @@ function findElement() {
   const toggleButton = document.querySelector('.toggle');
   const tempDiv = document.querySelector('.temp');
   const degreeDiv = document.querySelector('.degree');
-  return { inputBox, enterButton, toggleButton, tempDiv, degreeDiv };
+  const nameDiv = document.querySelector('.name');
+  return { inputBox, enterButton, toggleButton, tempDiv, degreeDiv, nameDiv };
 }
 
 export default findElement;
