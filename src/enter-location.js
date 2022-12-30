@@ -12,6 +12,14 @@ function findLocation() {
     saveWeatherObj(location);
     saveTempObj(location, 'metric');
   });
+
+  inputBox.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const location = inputBox.value;
+      saveWeatherObj(location);
+      saveTempObj(location, 'metric');
+    }
+  });
 }
 
 export default findLocation;

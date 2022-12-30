@@ -1,11 +1,11 @@
 body {
   background: rgb(50, 50, 50);
   font-family: sans-serif;
+  color: whitesmoke;
 }
 
 .temp,
 .degree,
 .name {
-  color: whitesmoke;
   font-size: 2rem;
 }

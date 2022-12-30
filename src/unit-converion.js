@@ -19,6 +19,7 @@ function combineClickConvert() {
 function clickConvert() {
   const { toggleButton } = findElement();
 
+  toggleButton.style.display = 'block';
   toggleButton.addEventListener('click', combineClickConvert);
 
   return toggleButton;
