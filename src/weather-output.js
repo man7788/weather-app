@@ -5,23 +5,49 @@ import displayInfo from './weather-display';
 
 function saveWeatherObj(location) {
   const weather = getWeather(location);
+  const { errorDiv } = findElement();
 
-  weather.then((data) => {
-    console.log(data);
-    displayInfo(data.name);
-  });
+  weather
+    .then((data) => {
+      errorDiv.textContent = '';
+      displayInfo(
+        data.name,
+        data.humidity,
+        data.main,
+        data.descript,
+        data.icon
+      );
+    })
+    .catch((error) => {
+      console.log(error);
+      errorDiv.textContent = 'No Location Found.';
+    });
 }
 
 function saveTempObj(location, units) {
   const { tempDiv } = findElement();
   const { degreeDiv } = findElement();
+  const { maxTempDiv } = findElement();
+  const { minTempDiv } = findElement();
+  const { maxDegreeDiv } = findElement();
+  const { minDegreeDiv } = findElement();
   const temp = convertUnits(location, units);
 
-  temp.then((data) => {
-    tempDiv.textContent = Math.floor(data.temp);
-    degreeDiv.textContent = '\u2103';
-    clickConvert(location);
-  });
+  temp
+    .then((data) => {
+      tempDiv.textContent = Math.floor(data.temp);
+      maxTempDiv.textContent = Math.floor(data.tempMax);
+      minTempDiv.textContent = Math.floor(data.tempMin);
+
+      degreeDiv.textContent = '\u2103';
+      maxDegreeDiv.textContent = '\u2103';
+      minDegreeDiv.textContent = '\u2103';
+
+      clickConvert(location);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
 
 export { saveWeatherObj, saveTempObj };
