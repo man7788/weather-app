@@ -1,11 +1,77 @@
 body {
+  /* border: 2px solid whitesmoke; */
   background: rgb(50, 50, 50);
   font-family: sans-serif;
   color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.temp,
-.degree,
+.container {
+  /* border: 2px solid red; */
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .name {
   font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.second-row {
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.visual-box{
+  /* border: 2px solid rgb(255, 251, 0); */
+  display: flex;
+  flex-direction: column;
+}
+
+.descript {
+  position: relative;
+  bottom: 1.5rem;
+  align-self: center;
+  text-transform: capitalize;
+}
+
+.all-temp-box {
+  /* border: 2px solid rgb(226, 43, 220); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.temp-box {
+  font-size: 2rem;
+}
+
+.max-min-box {
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 0.1fr 1fr;
+}
+
+.temp-box {
+  align-self: center;
+}
+
+.max-box {
+  grid-column: 3 / 4;
+}
+
+.temp-box,
+.min-box,
+.max-box {
+  display: flex;
+}
+
+.toggle {
+  align-self: center;
+  width: 4rem;
 }

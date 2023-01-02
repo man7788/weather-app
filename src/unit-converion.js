@@ -72,16 +72,16 @@ function changeUnits(data) {
 
   if (data.degree === 'metric') {
     tempDiv.textContent = Math.floor(data.temp);
-    maxTempDiv.textContent = Math.floor(data.tempMax);
-    minTempDiv.textContent = Math.floor(data.tempMin);
+    maxTempDiv.textContent = `H: ${Math.floor(data.tempMax)}`;
+    minTempDiv.textContent = `L: ${Math.floor(data.tempMin)}`;
 
     degreeDiv.textContent = '\u2103';
     maxDegreeDiv.textContent = '\u2103';
     minDegreeDiv.textContent = '\u2103';
   } else if (data.degree === 'imperial') {
     tempDiv.textContent = Math.floor(data.temp);
-    maxTempDiv.textContent = Math.floor(data.tempMax);
-    minTempDiv.textContent = Math.floor(data.tempMin);
+    maxTempDiv.textContent = `H: ${Math.floor(data.tempMax)}`;
+    minTempDiv.textContent = `L: ${Math.floor(data.tempMin)}`;
 
     degreeDiv.textContent = '\u2109';
     maxDegreeDiv.textContent = '\u2109';

@@ -7,18 +7,36 @@
   <title>Weather App</title>
 <script defer src="main.bundle.js"></script></head>
 <body>
-  <input class="location "type="text">
-  <button class="enter">Enter Location</button>
-  <button class="toggle" style="display: none;">&#176;C&nbsp;/&nbsp;&#176;F</button>
-  <div class="error"></div>
-  <div class="name"></div>
-  <div class="humidity"></div>
-  <div class="main"></div>
-  <div class="descript"></div>
-  <img class="icon"></img>
-  <div class="temp"></div><div class="degree"></div>
-  <div class="max-temp"> </div><div class="max-degree"></div>
-  <div class="min-temp"></div><div class="min-degree"></div>
+  <div class="container">
+    <div class="name"></div>
+
+    <div class="second-row">
+      <div class="visual-box">
+        <img class="icon"></img>
+        <div class="descript"></div>
+      </div>
+      <div class="all-temp-box">
+        <div class="temp-box">
+          <div class="temp"></div><div class="degree"></div>
+        </div>
+        <div class="max-min-box">
+          <div class="min-box">
+            <div class="min-temp"></div><div class="min-degree"></div>
+          </div>
+          <div class="max-box">
+            <div class="max-temp"> </div><div class="max-degree"></div>
+          </div>
+        </div>
+        <div class="humidity"></div>
+        <button class="toggle" style="display: none;">&#176;C&nbsp;/&nbsp;&#176;F</button>
+      </div>
+    </div>
+
+    <div class="main"></div>
+    <input class="location "type="text">
+    <button class="enter">Enter Location</button>
+    <div class="error"></div>
+  </div>
 
 </body>
 </html>
